@@ -1,0 +1,39 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      h1 生活文章列表
+      h3
+        a.btn.btn-success(target-"_blank",href="/gl/life/add") 添加文章
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th 文章名称
+            th 文章类别
+            th 文章访问量
+            th 文章来源
+            th 文章作者
+            th 文章写入时间
+            th 文章更新时间
+            th 查看
+            th 修改
+            th 删除
+         tbody
+           each item in lifes
+             tr(class="item-id-#{item._id}")
+               td #{item.title}
+               each cat in cates
+                  if cat.id == item.lifeCates
+                    td #{cat.title}
+               td #{item.pv}
+               td #{item.origin}
+               td #{item.author}
+               td #{moment(item.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}
+               td #{moment(item.meta.updateAt).format('YYYY-MM-DD HH:mm:ss')}
+               td: a.btn.btn-info(target-"_blank",href="../movie/#{item._id}") 查看
+               td: a.btn.btn-primary(target-"_blank",href="/gl/life/update/#{item._id}") 修改
+               td: button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+
+      script(src="/js/life.js")
+

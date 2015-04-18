@@ -1,0 +1,18 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      .col-md-8
+        h1 添加生活文章目录
+        form.form-horizontal(method="post",action="/gl/lifeCate/save")
+          input(type="text",name="lifeCate[_id]",value=lifeCate._id)
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 目录名称
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="lifeCate[title]",value="#{lifeCate.title}")
+          .form-group
+            .col-sm-offset-10.col-sm-2
+              button.btn.btn-default(type = "submit") 提交
+
+        

@@ -1,0 +1,26 @@
+{
+  "name": "mybolg",
+  "version": "0.0.1",
+  "authors": [
+    "coolwubo"
+  ],
+  "description": "this is mybolg v0.0.1",
+  "main": "bootstrap",
+  "keywords": [
+    "mybolg",
+    "v0.0.1"
+  ],
+  "license": "MIT",
+  "homepage": "www.coolwubo.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}

@@ -1,0 +1,46 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      .col-md-12
+        h1 添加文章
+        form.form-horizontal(method="post",action="/gl/work/save")
+          input(type="hidden",name="work[_id]",value=work._id)
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 文章名称
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="work[title]",value="#{work.title}")
+          //- .form-group
+          //-   label.col-sm-2.control-label(for="inputWorkCates") 文章类别
+          //-   .col-sm-10
+              //- input#WorkCates.form-control(type="text",name="work[workCates]",value="#{work.workCates}")
+          .form-group      
+            label.col-sm-2.control-label 文章类别
+            .col-sm-10
+              each cat in cates
+                label.radio-inline
+                   if work.id
+                     input(type="radio",name="work[workCates]",value="#{cat._id}" checked=cat._id.toString()==work.workCates.toString()) 
+                     | #{cat.title}  
+                   else
+                     input(type="radio",name="work[workCates]",value="#{cat._id}") 
+                     | #{cat.title}              
+          .form-group
+            label.col-sm-2.control-label(for="inputOrigin") 文章来源
+            .col-sm-10
+              input#inputOrigin.form-control(type="text",name="work[origin]",value="#{work.origin}")
+          .form-group
+            label.col-sm-2.control-label(for="inputAuthor") 文章作者2
+            .col-sm-10
+              input#inputAuthor.form-control(type="text",name="work[author]",value="#{work.author}")
+          .form-group
+            label.col-sm-2.control-label(for="inputContent") 文章内容
+            .col-sm-10
+              textarea#inputContent.form-control(name="work[content]",value="#{work.content}",rows="10")
+
+          .form-group
+            .col-sm-offset-11.col-sm-2.pull-right
+              button.btn.btn-primary(type = "submit") 提交
+
+        

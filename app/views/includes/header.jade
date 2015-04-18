@@ -1,0 +1,31 @@
+header#top.navbar.navbar-default.navbar-fixed-top(role="banner")
+	.container
+		.navbar-header.navCont
+			button.navbar-toggle.collapsed(type="button",data-toggle="collapse",data-target=".bs-navbar-collapse")
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href="/")
+				img(src="/img/logo.png",alt="走路去纽约")  				
+		nav.collapse.navbar-collapse.bs-navbar-collapse
+			ul.nav.navbar-nav
+				li.dropdown
+					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 工作积累
+						span.caret
+					ul.dropdown-menu(role="menu")
+						each cat in wCates
+							li
+								a(href='/work/see?catId=#{cat._id}&p=0') #{cat.title}  
+				li.dropdown
+					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 生活点滴
+						span.caret
+					ul.dropdown-menu(role="menu")
+						each cat in lCates
+							li
+								a(href='/life/see?catId=#{cat._id}&p=0') #{cat.title}  
+				li
+					a(href="#") 推荐电影
+				li
+					a(href="http://cv.coolwubo.com") 个人简历
+

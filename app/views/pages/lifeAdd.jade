@@ -1,0 +1,46 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      .col-md-12
+        h1 添加生活文章
+        form.form-horizontal(method="post",action="/gl/life/save")
+          input(type="hidden",name="life[_id]",value=life._id)
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 文章名称
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="life[title]",value="#{life.title}")
+          //- .form-group
+          //-   label.col-sm-2.control-label(for="inputlifeCates") 文章类别
+          //-   .col-sm-10
+              //- input#lifeCates.form-control(type="text",name="life[lifeCates]",value="#{life.lifeCates}")
+          .form-group      
+            label.col-sm-2.control-label 文章类别
+            .col-sm-10
+              each cat in cates
+                label.radio-inline
+                   if life.id
+                     input(type="radio",name="life[lifeCates]",value="#{cat._id}" checked=cat._id.toString()==life.lifeCates.toString()) 
+                     | #{cat.title}  
+                   else
+                     input(type="radio",name="life[lifeCates]",value="#{cat._id}") 
+                     | #{cat.title}              
+          .form-group
+            label.col-sm-2.control-label(for="inputOrigin") 文章来源
+            .col-sm-10
+              input#inputOrigin.form-control(type="text",name="life[origin]",value="#{life.origin}")
+          .form-group
+            label.col-sm-2.control-label(for="inputAuthor") 文章作者2
+            .col-sm-10
+              input#inputAuthor.form-control(type="text",name="life[author]",value="#{life.author}")
+          .form-group
+            label.col-sm-2.control-label(for="inputContent") 文章内容
+            .col-sm-10
+              textarea#inputContent.form-control(name="life[content]",value="#{life.content}",rows="10")
+
+          .form-group
+            .col-sm-offset-11.col-sm-2.pull-right
+              button.btn.btn-primary(type = "submit") 提交
+
+        

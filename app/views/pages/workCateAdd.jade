@@ -1,0 +1,18 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      .col-md-8
+        h1 添加文章目录2222
+        form.form-horizontal(method="post",action="/gl/workCate/save")
+          input(type="text",name="workCate[_id]",value=workCate._id)
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 目录名称
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="workCate[title]",value="#{workCate.title}")
+          .form-group
+            .col-sm-offset-10.col-sm-2
+              button.btn.btn-default(type = "submit") 提交
+
+        

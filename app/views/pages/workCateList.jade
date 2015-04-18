@@ -1,0 +1,29 @@
+extends ../layoutGl.jade
+
+block content
+  #content.container
+    .row
+      h1 工作文章目录列表
+      h3
+        a.btn.btn-success(target-"_blank",href="/gl/workCate/add") 添加目录
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th 目录名称
+            th 目录写入时间
+            th 目录更新时间
+            th 查看
+            th 修改
+            th 删除
+         tbody
+           each item in workCates
+             tr(class="item-id-#{item._id}")
+               td #{item.title}
+               td #{moment(item.meta.createdAt).format('MM/DD/YYYY')}
+               td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+               td: a.btn.btn-info(target-"_blank",href="../movie/#{item._id}") 查看
+               td: a.btn.btn-primary(target-"_blank",href="/gl/workCate/update/#{item._id}") 修改
+               td: button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+
+      script(src="/js/workCate.js")
+

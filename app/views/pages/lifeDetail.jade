@@ -1,0 +1,42 @@
+extends ../layout.jade
+
+
+block content
+	#content.container.bs-docs-container
+		.row
+			.col-md-8(role="main")
+				.artical-container.boxed
+					.inner
+						h3.artical-title 
+							a #{life.title}
+						each cat in lCates
+							if cat.id == life.lifeCates
+								small.artical-subTitle 
+									span.glyphicon.glyphicon-menu-hamburger(aria-hidden="true") 分类: 
+									a(href="/life/see?catId=#{life.lifeCates}&p=0") #{cat.title} 
+						small 
+							span.glyphicon.glyphicon-star(aria-hidden="true") 访问量:#{life.pv}
+						small 
+							span.glyphicon.glyphicon-pencil(aria-hidden="true") 来源:#{life.origin}
+						small.artical-subTitle  #{moment(life.meta.updateAt).format('MM/DD/YYYY')}
+						.artical-content
+							p !{life.content}
+				<div class="ds-thread" data-thread-key="#{life.id}" data-title="#{life.title}" data-url="/life/see?catId=#{life.id}"></div>
+			.col-md-3
+				.aboutMe.boxed.blue-line.blue-line.artical-container
+					.about-avatar
+						.avatar
+							img(src="/img/avatar.jpg",alt="my avatar",width="100",height="100")
+					.about-text
+						.about-name Wu Bo
+						.about-detail &nbsp;关注并喜欢前端技术，致力于成为一名优秀的前端攻城狮。
+						.about-detail &nbsp;业余爱好DOTA摄影骑车旅游，希望有朝一日能背着相机走遍喜欢的每一个角落。
+					.clearfix
+				.newArticle.panel.panel-default.boxed.artical-container
+					.panel-heading 最新文章
+					.panel-body
+						ul.side_article_list
+							each item in newPosts
+								li.side_article_list_item #{item.status}.
+									a(href="/newPost/#{item._id}") #{item.title}
+	script(src="/js/duoshuo.js")
