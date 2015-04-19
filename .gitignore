@@ -1,4 +1,5 @@
 
 node_modules
 .readMe.txt.swp
- 
+myReadMe.txt 
+.gitignore
