@@ -64,3 +64,7 @@ exports.showNewPost = function(req,res){
 		}
 	})
 }
+
+exports.do404 = function(req,res){
+	res.render("404")
+}
