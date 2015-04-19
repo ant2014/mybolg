@@ -3,8 +3,8 @@
 		color: #14191e;
     font: 14px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
 	}
-	ul, ul li{ 
-		list-style-type:none;
+	ul{ 
+		padding-left: 10px!important;
 	}
 	small{
 		margin-right:20px;
@@ -67,7 +67,7 @@
   /*newPost*/
   .side_article_list{
   		margin-top: -10px;
-  		margin-left: -33px;
+  		margin-left: 0px;
   		margin-right: 6px;
   }
   .side_article_list_item{
