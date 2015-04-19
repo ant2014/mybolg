@@ -53,4 +53,6 @@ module.exports = function(app){
 	app.get('/gl/logout',User.logout);
 	app.get('/signin',User.showSignin);
 	/*app.get('/signup',User.showSignup);*/
+
+	app.get('*',Index.do404)
 }
