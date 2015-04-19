@@ -4,29 +4,29 @@ var LifeCate = require("../models/lifeCate")
 var bodyParser = require('body-parser');
 
 //signup
-exports.signup = function(req,res){
-	var _user = req.body.user;
-	console.log("signup Z_user = "+ _user.name);
-	//
-	//console.log("signup user = "+ user.name);
+// exports.signup = function(req,res){
+// 	var _user = req.body.user;
+// 	console.log("signup Z_user = "+ _user.name);
+// 	//
+// 	//console.log("signup user = "+ user.name);
 
-	User.findOne({name:_user.name},function(err,user){
-		if(err) console.log(err);
-		//console.log("User.findOne user.name = "+ user.name);
-		if(user){
-			console.log("the user is on");
-			return res.redirect('/signin');
-		}
-		else{
-			user = new User(_user);
-			user.save(function (err,user){
-				if(err){console.log(err)}
-				console.log(user+"added success");
-				res.redirect("/gl/work");
-			})
-		}
-	})
-}
+// 	User.findOne({name:_user.name},function(err,user){
+// 		if(err) console.log(err);
+// 		//console.log("User.findOne user.name = "+ user.name);
+// 		if(user){
+// 			console.log("the user is on");
+// 			return res.redirect('/signin');
+// 		}
+// 		else{
+// 			user = new User(_user);
+// 			user.save(function (err,user){
+// 				if(err){console.log(err)}
+// 				console.log(user+"added success");
+// 				res.redirect("/gl/work");
+// 			})
+// 		}
+// 	})
+// }
 
 //user list page
 exports.userlist = function(req,res){
@@ -49,7 +49,7 @@ exports.signin = function(req,res){
 
 		if(!user){
 			console.log("have no this user");
-			return res.redirect('/signup');
+			return res.redirect('/');
 		}
 
 		user.comparePassword(password,function(err,isMatch){
@@ -92,7 +92,7 @@ exports.showSignin = function(req,res){
 	
 }
 //signup
-exports.showSignup = function(req,res){
+/*exports.showSignup = function(req,res){
 	WorkCate.fetch(function(err,wCates){
 			if(err){console.log(err)}	
 			LifeCate.fetch(function(err,lCates){
@@ -104,7 +104,7 @@ exports.showSignup = function(req,res){
 				});
 			})
 		})
-}
+}*/
 
 //midware for user
 exports.signinRequired = function(req,res,next){

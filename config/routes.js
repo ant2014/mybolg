@@ -47,10 +47,10 @@ module.exports = function(app){
 	app.delete('/gl/life/delete/:id',User.signinRequired,Life.delete)
 
 	//user
-	app.post('/user/signup',User.signup);
-	app.get('/admin/user/list',User.signinRequired,User.adminRequired,User.userlist);
+	/*app.post('/user/signup',User.signup);*/
+	app.get('/admin/user/list',User.signinRequired,User.userlist);
 	app.post('/user/signin',User.signin);
 	app.get('/gl/logout',User.logout);
 	app.get('/signin',User.showSignin);
-	app.get('/signup',User.showSignup);
+	/*app.get('/signup',User.showSignup);*/
 }

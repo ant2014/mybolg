@@ -12,7 +12,6 @@ exports.list = function(req,res){
 			console.log(err);
 		}
 		WorkCate.fetch(function(err,cates){
-			console.log(works);
 			if(err){console.log(err)}	
 				res.render('workList',{
 				works:works,
