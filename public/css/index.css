@@ -14,7 +14,7 @@
 	  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASUlEQVQYV2PcsWOHpIeHx3MGJIAuBuIzIivApxiukJDJYIXYFKHbxIjNPSBF6O7GcCNII7pCvJ6BWQ2zkTTPoOvGFmRYPYMtAgCh0ELO5eiG4gAAAABJRU5ErkJggg==);
 	}
 	.artical-content{
-		margin-top: 1px #ccc dashed;
+		border-top: 1px #ccc dashed;
 		margin-top:8px;
 	}
 	.greenColor{
