@@ -25,5 +25,11 @@ header#top.navbar.navbar-default.navbar-fixed-top(role="banner")
 							li
 								a(href='/life/see?catId=#{cat._id}&p=0') #{cat.title}  
 				li
+					a(href="/funny") xiaowanyi
+				li
 					a(href="http://cv.coolwubo.com") 个人简历
+			form.navbar-form.navbar-left.pull-right(role="search",method='GET',action='/search')
+				.form-group
+					input.form-control(type="text",placeholder="search")
+				button.btn.btn-success.maleft10(type="submit") Search
 
