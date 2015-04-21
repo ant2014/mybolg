@@ -26,7 +26,7 @@
 		margin-top:8px;
 	}
 	.greenColor{
-		color: #22C3AA!important;
+		color: #089983!important;
 	}
 	#content{
 		padding-top:60px;
@@ -35,12 +35,12 @@
 		min-height: 700px;
 	}
 	.navbar-green{
- 		background-color: #22c3aa;
-    border-color: #22c3aa;
+ 		background-color: #089983;
+    border-color: #089983;
 
 	}
 	.navbar-nav a{
-		background-color: #22c3aa!important;
+		background-color: #089983!important;
 		font-weight: bold;
 		color: #fff;
 	}
@@ -71,7 +71,7 @@
 		position: relative,
 	}
 	.boxed.blue-line {
-		border-top: 4px solid #22C3AA;
+		border-top: 4px solid #089983;
 	}
 	.boxed:hover{
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
@@ -81,7 +81,7 @@
 	}
 	/*about Me*/
 	.aboutMe{
-	  background-color: #22C3AA;
+	  background-color: #089983;
 	  border-radius: 6px;
 	  box-shadow: 0 2px 9px rgba(128,128,128,1);
 	  color: #fff;
@@ -125,7 +125,7 @@
   }
   /*newPost end*/
   .panel-green > .panel-heading{
-  	  background-color: #22C3AA;
+  	  background-color: #089983;
     border-color: #ddd;
     color: #333;
   }
