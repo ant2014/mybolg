@@ -11,21 +11,21 @@ header#top.navbar.navbar-green.navbar-fixed-top(role="banner")
 		nav.collapse.navbar-collapse.bs-navbar-collapse
 			ul.nav.navbar-nav
 				li.dropdown
-					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 工作积累
+					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 技术随笔
 						span.caret
 					ul.dropdown-menu(role="menu")
 						each cat in wCates
 							li
 								a(href='/work/see?catId=#{cat._id}&p=0') #{cat.title}  
 				li.dropdown
-					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 生活点滴
+					a(href="/",class="dropdown-toggle",data-toggle="dropdown",role="button",ariaaexpanded="false") 看看别的
 						span.caret
 					ul.dropdown-menu(role="menu")
 						each cat in lCates
 							li
 								a(href='/life/see?catId=#{cat._id}&p=0') #{cat.title}  
 				li
-					a(href="/funny") xiaowanyi
+					a(href="/funny") 小玩意儿
 				li
 					a(href="http://cv.coolwubo.com") 个人简历
 			form.navbar-form.navbar-left.pull-right(role="search",method='GET',action='/search')
