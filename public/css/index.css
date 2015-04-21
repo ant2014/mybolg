@@ -1,7 +1,7 @@
 	body{
 		background-color:#edeff0;
 		color: #14191e;
-        font: 16px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
+    font: 14px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
 	}
 	ul{ 
 		padding-left: 10px!important;
@@ -22,11 +22,11 @@
 	  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASUlEQVQYV2PcsWOHpIeHx3MGJIAuBuIzIivApxiukJDJYIXYFKHbxIjNPSBF6O7GcCNII7pCvJ6BWQ2zkTTPoOvGFmRYPYMtAgCh0ELO5eiG4gAAAABJRU5ErkJggg==);
 	}
 	.artical-content{
-		border-top: 1px #ccc dashed;
+		margin-top: 1px #ccc dashed;
 		margin-top:8px;
 	}
 	.greenColor{
-		color: #089983!important;
+		color: #22C3AA!important;
 	}
 	#content{
 		padding-top:60px;
@@ -35,12 +35,12 @@
 		min-height: 700px;
 	}
 	.navbar-green{
- 		background-color: #089983;
-    border-color: #089983;
+ 		background-color: #22c3aa;
+    border-color: #22c3aa;
 
 	}
 	.navbar-nav a{
-		background-color: #089983!important;
+		background-color: #22c3aa!important;
 		font-weight: bold;
 		color: #fff;
 	}
@@ -71,7 +71,7 @@
 		position: relative,
 	}
 	.boxed.blue-line {
-		border-top: 4px solid #089983;
+		border-top: 4px solid #22C3AA;
 	}
 	.boxed:hover{
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
@@ -81,7 +81,7 @@
 	}
 	/*about Me*/
 	.aboutMe{
-	  background-color: #089983;
+	  background-color: #22C3AA;
 	  border-radius: 6px;
 	  box-shadow: 0 2px 9px rgba(128,128,128,1);
 	  color: #fff;
@@ -125,7 +125,7 @@
   }
   /*newPost end*/
   .panel-green > .panel-heading{
-  	  background-color: #089983;
+  	  background-color: #22C3AA;
     border-color: #ddd;
     color: #333;
   }
