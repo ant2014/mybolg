@@ -65,6 +65,20 @@ exports.showNewPost = function(req,res){
 	})
 }
 
+exports.funny = function(req,res){
+	console.log("-----contr/index.js--- funny function")
+	WorkCate.fetch(function(err,wCates){
+		if(err){console.log(err)}	
+		LifeCate.fetch(function(err,lCates){
+			if(err){console.log(err)}
+			res.render('funny',{
+				wCates:wCates,
+				lCates:lCates,
+			});
+		})
+	})
+}
+
 exports.do404 = function(req,res){
 	res.render("404")
 }
