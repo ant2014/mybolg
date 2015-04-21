@@ -3,13 +3,28 @@ extends ../layout.jade
 
 block content
 	#content.container.bs-docs-container
+		img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
+		h2.centerText anli
 		.row
-			.col-md-3
+			.col-md-4
 				.funnydiv
 					.f-img
-						a ToolTip
+						a(href="http://www.baidu.com") ToolTip
 					.f-text
 						p this is a jianjie
 					.f-link
-						a show
-						a github
+						a.pull-right
+							i(class="fa fa-picture-o fa-2x maleft10") look
+						a.pull-right
+							i(class="fa fa-github fa-2x maleft10") code
+			.col-md-4
+				.funnydiv
+					.f-img
+						a(href="http://www.baidu.com") ToolTip
+					.f-text
+						p this is a jianjie
+					.f-link
+						a.pull-right
+							i(class="fa fa-picture-o fa-2x maleft10") look
+						a.pull-right
+							i(class="fa fa-github fa-2x maleft10") code
