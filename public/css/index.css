@@ -15,6 +15,9 @@
 	.maleft20{ 
 		margin-left: 20px;
 	}
+	.centerText{
+		text-align: center;
+	}
 	.body-wrap{
 	  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASUlEQVQYV2PcsWOHpIeHx3MGJIAuBuIzIivApxiukJDJYIXYFKHbxIjNPSBF6O7GcCNII7pCvJ6BWQ2zkTTPoOvGFmRYPYMtAgCh0ELO5eiG4gAAAABJRU5ErkJggg==);
 	}
@@ -28,6 +31,33 @@
 	#content{
 		padding-top:60px;
 		padding-bottom: 30px;
+		background-color: #fff;
+		min-height: 700px;
+	}
+	.navbar-green{
+ 		background-color: #22c3aa;
+    border-color: #22c3aa;
+
+	}
+	.navbar-nav a{
+		background-color: #22c3aa!important;
+		font-weight: bold;
+		color: #fff;
+	}
+	.navbar-nav a:hover{
+		background-color: #1da38e!important;
+	}
+	.navbar-nav a:focus{
+		background-color: #1da38e!important;
+	}
+	.dropdown-menu{
+		padding-left: 0px!important;
+	}
+	.dropdown-menu a{
+		background-color: #fff!important;
+	}
+	.dropdown-menu li a:hover{
+		color: #fff;
 	}
 	.artical-container{
 		background-color:#fff;
@@ -64,7 +94,8 @@
     width: 100px;
     height: 100px;
     vertical-align: middle;
-    margin: 0 auto;
+    margin: 2px auto;
+    display: block;
   }
   .about-text{
   	  border-top: 3px solid #fff;
@@ -107,13 +138,15 @@
 		text-align:center;
 	}
 	.foot-container{
-		padding-top: 10px;
+		padding-top: 25px;
+		padding-bottom: 10px;
 		border-top: 1px solid #ccc;
 	}
 
 	.funnydiv{
 		border: 1px solid #ccc;
-		height: 200px;
+		height: 240px;
+		background-color: #fff;
 	}
 	.f-img{
 		width: 100%;
@@ -135,5 +168,14 @@
 	.f-img a:hover{
 		font-size: 65px;
 		text-decoration: none;
+
+	}
+	.f-text{
+		padding: 10px 8px 8px;
+		height: 60px;
+		overflow: hidden;
+		background-color: #fff;
+	}
+	.f-link{
 
 	}
