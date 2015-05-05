@@ -18,7 +18,7 @@ exports.index = function(req,res){
 		var results = works.slice(index,index+count)
 
 		for(var i=0;i<works.length;i++){
-			works[i].content = markdown.toHTML(works[i].content).substring(0,280)
+			works[i].content = markdown.toHTML(works[i].content).substring(0,250)+"..."
 		}
 
 		WorkCate.fetch(function(err,wCates){
