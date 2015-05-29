@@ -19,6 +19,9 @@
 	small{
 		margin-right:20px;
 	}
+	img{
+		width: 100%;
+	}
 	.maleft10{ 
 		margin-left: 10px;
 	}
