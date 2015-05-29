@@ -196,11 +196,15 @@ exports.see = function(req,res){
 			if(err){
 				coonsole.log(err);
 			}
-			works.reverse()
+			//works.reverse()
 			var results = works.slice(index,index+count)
 
 			for(var i=0;i<results.length;i++){
+<<<<<<< HEAD
 				results[i].content = mark(results[i].content).substring(0,300)
+=======
+				results[i].content = markdown.toHTML(results[i].content).substring(0,250)+"..."
+>>>>>>> 69ef5b8856b5d2f93d308581f63fb817ecf87ca4
 			}
 			//nav
 			WorkCate.fetch(function(err,wCates){

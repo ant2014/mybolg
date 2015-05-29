@@ -2,3 +2,26 @@ script(src="/libs/jquery/dist/jquery.min.js")
 script(src="/libs/bootstrap/dist/js/bootstrap.min.js")
 script(src="/js/prettify.js")
 script(src="/js/lightHeight.js")
+script.
+  $(document).ready(function() {
+    var html = "<div id=\"layer\" style=\"position:fixed;_position:absolute;z-index:200;display:none;width:68px; height:68px; bottom:20px;right:5px;opacity:0.75;\">";
+    html += "<a href=\"javascript:void(0);\" title=\"返回顶部\">";
+    html += "<span style=\"width:68px;height:68px;display:block; margin-bottom:7px;-webkit-transition:1s;-moz-transition:1s;transition:1s;background-color: transparent 9; background:#ddd url(http://7xjao4.com1.z0.glb.clouddn.com/r_top.png) no-repeat center center;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;\"></span>";
+    html += "</a>";
+    html += "</div>";
+    $("body").append(html);
+    $("#layer span").mouseover(function() { $(this).css("background-color", "#999"); }).mouseout(function() { $(this).css("background-color", "#ddd"); });
+    $("#layer span").click(function() {
+      $("html,body").animate({ scrollTop: "0px" }, 500);
+      return false;
+    });
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > 100) {
+        $("#layer").fadeIn("slow");
+        return false;
+      } else {
+        $("#layer").fadeOut("fast");
+        return false;
+      }
+    });
+  });

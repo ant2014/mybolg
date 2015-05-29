@@ -1,7 +1,17 @@
 	body{
 		background-color:#edeff0;
 		color: #14191e;
-    font: 14px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
+    font: 16px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
+	}
+	body ::selection {
+    color:#FFFFFF;
+    background-color:#32a082;
+    text-shadow:none;
+	}
+	body ::-moz-selection {
+	    color:#FFFFFF;
+	    background-color:#32a082;
+	    text-shadow:none;
 	}
 	ul{ 
 		padding-left: 10px!important;
@@ -9,11 +19,17 @@
 	small{
 		margin-right:20px;
 	}
+	img{
+		width: 100%;
+	}
 	.maleft10{ 
 		margin-left: 10px;
 	}
 	.maleft20{ 
 		margin-left: 20px;
+	}
+	.maright10{
+		margin-right: 10px;
 	}
 	.centerText{
 		text-align: center;
@@ -145,16 +161,22 @@
 
 	.funnydiv{
 		border: 1px solid #ccc;
-		height: 240px;
+		height: 310px;
 		background-color: #fff;
 	}
-	.f-img{
+	.f-img-niuyue{
+		width: 100%;
+		height: 150px;
+		background-color: #22c3aa;
+		text-align: center;
+	}
+	.f-img-ToolTip{
 		width: 100%;
 		height: 150px;
 		background-color: #369;
 		text-align: center;
 	}
-	.f-img a{
+	.f-img-niuyue a,.f-img-ToolTip a{
 		font-size: 50px;
 		color: #fff;
 		text-align: center;
@@ -165,14 +187,14 @@
 		-webkit-transition: all 0.7s;
 		-o-transition: all 0.7s;
 	}
-	.f-img a:hover{
+	.f-img-niuyue a:hover,.f-img-ToolTip a:hover{
 		font-size: 65px;
 		text-decoration: none;
 
 	}
 	.f-text{
 		padding: 10px 8px 8px;
-		height: 60px;
+		height: 120px;
 		overflow: hidden;
 		background-color: #fff;
 	}
