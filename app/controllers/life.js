@@ -3,6 +3,7 @@ var LifeCate = require("../models/lifeCate")
 var WorkCate = require("../models/workCate")
 var NewPost = require("../models/newPost")
 var markdown = require('markdown').markdown
+var mark = require('marked')
 var _ = require('underscore');
 
 exports.index = function(req,res){
@@ -19,7 +20,7 @@ exports.index = function(req,res){
 		var results = life.slice(index,index+count)
 
 		for(var i=0;i<life.length;i++){
-			life[i].content = markdown.toHTML(life[i].content).substring(0,300)
+			life[i].content = mark(life[i].content).substring(0,300)
 		}
 
 		LifeCate.fetch(function(err,lCates){
@@ -191,7 +192,7 @@ exports.detail = function(req,res){
 	
 	Life.findById(id,function(err,life){
 		if(err){console.log(err);}
-		life.content = markdown.toHTML(life.content)
+		life.content = mark(life.content)
 
 		//nav
 		LifeCate.fetch(function(err,lCates){
@@ -231,7 +232,7 @@ exports.see = function(req,res){
 			var results = lifes.slice(index,index+count)
 
 			for(var i=0;i<results.length;i++){
-				results[i].content = markdown.toHTML(results[i].content).substring(0,300)
+				results[i].content = mark(results[i].content).substring(0,300)
 			}
 			
 			LifeCate.fetch(function(err,lCates){
@@ -272,7 +273,7 @@ exports.see = function(req,res){
 			lifes = lifes.reverse()
 			var results = lifes.slice(index,index+count)
 			for(var i=0;i<results.length;i++){
-				results[i].content = markdown.toHTML(results[i].content).substring(0,300)
+				results[i].content = mark(results[i].content).substring(0,300)
 			}
 			//nav
 			LifeCate.fetch(function(err,lCates){
