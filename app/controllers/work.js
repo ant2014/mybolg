@@ -3,6 +3,8 @@ var WorkCate = require("../models/workCate")
 var LifeCate = require("../models/lifeCate")
 var NewPost = require("../models/newPost")
 var markdown = require('markdown').markdown
+var mark = require('marked')
+
 var _ = require('underscore');
 
 exports.list = function(req,res){
@@ -158,7 +160,7 @@ exports.detail = function(req,res){
 	
 	Work.findById(id,function(err,work){
 		if(err){console.log(err);}
-		work.content = markdown.toHTML(work.content)
+		work.content = mark(work.content)
 
 		//nav
 		WorkCate.fetch(function(err,wCates){
@@ -198,7 +200,7 @@ exports.see = function(req,res){
 			var results = works.slice(index,index+count)
 
 			for(var i=0;i<results.length;i++){
-				results[i].content = markdown.toHTML(results[i].content).substring(0,300)
+				results[i].content = mark(results[i].content).substring(0,300)
 			}
 			//nav
 			WorkCate.fetch(function(err,wCates){
@@ -239,7 +241,7 @@ exports.see = function(req,res){
 			works.reverse()
 			var results = works.slice(index,index+count)
 			for(var i=0;i<results.length;i++){
-				results[i].content = markdown.toHTML(results[i].content).substring(0,300)
+				results[i].content = mark(results[i].content).substring(0,300)
 			}
 			//nav
 			WorkCate.fetch(function(err,wCates){

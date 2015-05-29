@@ -3,6 +3,7 @@ var WorkCate = require("../models/workCate")
 var LifeCate = require("../models/lifeCate")
 var NewPost = require("../models/newPost")
 var markdown = require('markdown').markdown
+var mark = require('marked')
 
 exports.index = function(req,res){
 	console.log("-----contr/index.js--- index function")
@@ -18,7 +19,8 @@ exports.index = function(req,res){
 		var results = works.slice(index,index+count)
 
 		for(var i=0;i<works.length;i++){
-			works[i].content = markdown.toHTML(works[i].content).substring(0,280)
+			//works[i].content = markdown.toHTML(works[i].content).substring(0,280)
+			works[i].content =mark(works[i].content).substring(0,280)
 		}
 
 		WorkCate.fetch(function(err,wCates){
