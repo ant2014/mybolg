@@ -1,12 +1,13 @@
 	body{
 		background-color:#edeff0;
-		color: #14191e;
-    font: 16px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
+		color: #282828;
+    	font: 16px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif!important;
 	}
+	a{ color: #282828}
 	body ::selection {
-    color:#FFFFFF;
-    background-color:#32a082;
-    text-shadow:none;
+	    color:#FFFFFF;
+	    background-color:#32a082;
+	    text-shadow:none;
 	}
 	body ::-moz-selection {
 	    color:#FFFFFF;
@@ -95,24 +96,26 @@
 		background-color: #F5F5F5;
 	}
 	.articalCat{
-		background-color: #80bd01;
+		background-color: #0DB280;
 		border-radius: 3px;
 		color: #fff;
 		font-size: 12px;
 		padding:2px 4px;
+		text-decoration: none;
 	}
 	.articalTitle{
 		margin-left: 10px;
-		font-size: 14px;
+		font-size: 16px;
 	}
 	.articalView{
 		font-size: 12px;
-		color: #ccc;
+		color: #6F6F6F;
+		margin-left:5px;
 	}
 	.articalTime{
 		float: right;
 		font-size: 12px;
-		color: #ccc;
+		color: #646464;
 	}
 	.boxed{
 		/*border:1px solid #cacaca;*/

@@ -9,7 +9,7 @@ exports.index = function(req,res){
 	console.log("-----contr/index.js--- index function")
 
 	var page = parseInt(req.query.p,10) || 0
-	var count = 5
+	var count = 20
 	var index = page * count
 
 	Work.fetch(function(err,works){
