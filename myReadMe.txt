@@ -1,4 +1,4 @@
-如果有文件上传，我们应该先做上传，然后再做数据对数据库操作
+a如果有文件上传，我们应该先做上传，然后再做数据对数据库操作
 这里我们用中间件来实现
 中间件是整个流水线中间对一环，对收到对数据进行处理，然后返回合适对格式
 app.post('/admin/movie/new',User.signinRequired,Movie.savePoster,Movie.add);
