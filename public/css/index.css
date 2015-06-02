@@ -14,7 +14,7 @@
 	    text-shadow:none;
 	}
 	ul{ 
-		padding-left: 10px!important;
+		list-style: none;
 	}
 	small{
 		margin-right:20px;
@@ -47,7 +47,7 @@
 	#content{
 		padding-top:60px;
 		padding-bottom: 30px;
-		background-color: #fff;
+		background-color: #edeff0;
 		min-height: 700px;
 	}
 	.navbar-green{
@@ -80,26 +80,61 @@
 		padding: 0;
 		margin-top: 20px;
 	}
-	.boxed{
-		border:1px solid #cacaca;
+	.artical-list{
+		padding-left: 0px;
+	}
+	.artical-list li{
+		font-size:14px;
+		line-height: 2em;
+		overflow: hidden;
+		border-top: 1px solid #f0f0f0;
+		padding: 8px 10px 8px 5px;
+		background-color: #fff;
+	}
+	.artical-list li:hover{
+		background-color: #F5F5F5;
+	}
+	.articalCat{
+		background-color: #80bd01;
 		border-radius: 3px;
-		box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+		color: #fff;
+		font-size: 12px;
+		padding:2px 4px;
+	}
+	.articalTitle{
+		margin-left: 10px;
+		font-size: 14px;
+	}
+	.articalView{
+		font-size: 12px;
+		color: #ccc;
+	}
+	.articalTime{
+		float: right;
+		font-size: 12px;
+		color: #ccc;
+	}
+	.boxed{
+		/*border:1px solid #cacaca;*/
+		border-radius: 3px;
+		/*box-shadow: 3px 3px 3px rgba(0,0,0,0.2);*/
 		position: relative,
 	}
 	.boxed.blue-line {
 		border-top: 4px solid #22C3AA;
 	}
 	.boxed:hover{
-		box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+		/*box-shadow: 5px 5px 5px rgba(0,0,0,0.2);*/
 	}
 	.boxed .inner{
 		padding:5px 26px 26px;
 	}
+
 	/*about Me*/
 	.aboutMe{
 	  background-color: #22C3AA;
 	  border-radius: 6px;
-	  box-shadow: 0 2px 9px rgba(128,128,128,1);
+	  /*box-shadow: 0 2px 9px rgba(128,128,128,1);*/
 	  color: #fff;
 	  text-align: center;
     padding-top: 20px;
@@ -130,6 +165,7 @@
   		margin-top: -10px;
   		margin-left: 0px;
   		margin-right: 6px;
+  		padding-left: 10px;
   }
   .side_article_list_item{
   	  border-bottom: 1px dashed #ccc;
