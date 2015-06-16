@@ -23,16 +23,12 @@ block content
 							p !{life.content}
 				<div class="ds-thread" data-thread-key="#{life.id}" data-title="#{life.title}" data-url="http://www.coolwubo.com/life/see?catId=#{life.id}"></div>
 			.col-md-4
-				.aboutMe.boxed.blue-line.blue-line.artical-container
-					img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
-					.about-text 关注并喜欢前端技术
-					.about-text2 喜欢倒腾，对互联网充满热情
-					.about-decor
 				.newArticle.panel.panel-default.boxed.artical-container
 					.panel-heading 最新文章
 					.panel-body
 						ul.side_article_list
-							each item in newPosts
-								li.side_article_list_item #{item.status}.
+							each item, index in newPosts
+								li.side_article_list_item 
 									a(href="/newPost/#{item._id}") #{item.title}
+									span.side_article_list_view #{item.pv}
 	script(src="/js/duoshuo.js")

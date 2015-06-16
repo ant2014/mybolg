@@ -42,6 +42,7 @@ block content
 					.panel-heading 最新文章
 					.panel-body
 						ul.side_article_list
-							each item in newPosts
-								li.side_article_list_item #{item.status}.
+							each item, index in newPosts
+								li.side_article_list_item 
 									a(href="/newPost/#{item._id}") #{item.title}
+									span.side_article_list_view #{item.pv}

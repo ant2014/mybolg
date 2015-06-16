@@ -26,17 +26,12 @@ block content
 								span #{currentPage}
 						-}else{
 							li
-								a(href="/work/see?#{query}&p=#{i}") #{i+1}
+								a(href="/search?#{query}&p=#{i}") #{i+1}
 						-}
 					-}
 			.col-md-4
-				.aboutMe.boxed.blue-line.blue-line.artical-container
-					img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
-					.about-text 关注并喜欢前端技术
-					.about-text2 喜欢倒腾，对互联网充满热情
-					.about-decor
 				.newArticle.panel.panel-default.boxed.artical-container
-					.panel-heading #{listName}
+					.panel-heading 最新文章
 					.panel-body
 						ul.side_article_list
 							each item, index in newPosts

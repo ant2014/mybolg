@@ -1,5 +1,5 @@
-script(src="/libs/jquery/dist/jquery.min.js")
-script(src="/libs/bootstrap/dist/js/bootstrap.min.js")
+script(src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js")
+script(src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js")
 script(src="/js/prettify.js")
 script(src="/js/lightHeight.js")
 script.
@@ -24,4 +24,45 @@ script.
         return false;
       }
     });
+    
+    $("#extendShow").click(function(){
+      console.log($("#extendShow").title);
+      if($("#extendShow").attr("title") == "扩展显示"){
+        $(".col-md-8").animate({ 
+          width: "100%",
+        }, 500 );
+        $(".col-md-4").hide();
+        $("#extendShow").attr("title","收缩显示");
+        $("#extendShow").removeClass("fa-expand");
+        $("#extendShow").addClass("fa-compress");
+      }else{
+        $(".col-md-8").animate({ 
+          width: "66.66666667%",
+        }, 500 );
+        $(".col-md-4").show();
+        $("#extendShow").attr("title","扩展显示");
+        $("#extendShow").removeClass("fa-compress");
+        $("#extendShow").addClass("fa-expand");
+      }
+     
+    });
+
+     $(".artical-content").find("h2,h3,h4,h5,h6").each(function(i,item){
+          var tag = $(item).get(0).localName;
+          $(item).attr("id","wow"+i);
+          $(".AnchorContent").append('<li><a class="anchor-link" href="#wow'+i+'">'+$(this).text()+'</a></li>');     
+          $(".newh2").css("margin-left",0);     
+          $(".newh3").css("margin-left",20);     
+          $(".newh4").css("margin-left",40);     
+          $(".newh5").css("margin-left",60);     
+          $(".newh6").css("margin-left",80); });
+
   });
+  window.onscroll = function(){
+      if ($(document).scrollTop() > 500)
+      {
+        $(".BlogAnchor").addClass('floatFixed');
+      }else{
+        $(".BlogAnchor").removeClass('floatFixed');
+      }
+    }

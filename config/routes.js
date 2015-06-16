@@ -54,6 +54,8 @@ module.exports = function(app){
 	app.get('/signin',User.showSignin);
 	/*app.get('/signup',User.showSignup);*/
 
+	app.get('/search',Index.search)
+	
 	app.get('/funny',Index.funny)
 	app.get('*',Index.do404)
 

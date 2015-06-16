@@ -1,4 +1,4 @@
-header#top.navbar.navbar-green.navbar-fixed-top(role="banner")
+header#top.navbar.navbar-green(role="banner")
 	.container
 		.navbar-header.navCont
 			button.navbar-toggle.collapsed(type="button",data-toggle="collapse",data-target=".bs-navbar-collapse")
@@ -28,6 +28,5 @@ header#top.navbar.navbar-green.navbar-fixed-top(role="banner")
 					a(href="/funny") 小玩意儿
 			form.navbar-form.navbar-left.pull-right(role="search",method='GET',action='/search')
 				.form-group
-					input.form-control(type="text",placeholder="search")
-				button.btn.btn-success.maleft10(type="submit") Search
+					input.form-control(type="text",placeholder="search",name='q')
 

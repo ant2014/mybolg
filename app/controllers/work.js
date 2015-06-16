@@ -157,9 +157,22 @@ exports.detail = function(req,res){
 			if(err){console.log(err);}
 		})
 
+
 	
 	Work.findById(id,function(err,work){
 		if(err){console.log(err);}
+		//如果post中有这个work，则把post中的pv值更新
+		NewPost.findById(id,function(err,postHaveThisWork){
+			console.log("find id = " + id);
+			if(err){console.log(err);}
+			else{
+				NewPost.update({_id:id},{pv:work.pv},function(err){
+					if(err){console.log(err);}
+				});
+			}
+			
+		})
+
 		work.content = mark(work.content)
 
 		//nav
@@ -186,7 +199,7 @@ exports.see = function(req,res){
 	console.log("-----contr/work.js--- see function")
 	var catId = req.query.catId
 	var page = parseInt(req.query.p,10) || 0
-	var count = 5
+	var count = 20
 	var index = page * count
 	console.log("catId = "+catId)
 	if(catId=="list"){
@@ -210,6 +223,7 @@ exports.see = function(req,res){
 					NewPost.fetch(function(err,newPosts){
 						console.log("newPosts = "+newPosts)
 						res.render('index',{
+							listName: "最新文章",
 							newPosts:newPosts,
 							works:results,
 							lCates:lCates,
@@ -250,6 +264,7 @@ exports.see = function(req,res){
 					if(err){console.log(err)}	
 					NewPost.fetch(function(err,newPosts){
 						res.render('index',{
+							listName: "最新文章",
 							newPosts: newPosts,
 							wCates: wCates,
 							lCates: lCates,

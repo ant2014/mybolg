@@ -22,18 +22,27 @@ block content
 						small.artical-subTitle  #{moment(work.meta.updateAt).format('MM/DD/YYYY')}
 						.artical-content
 							p !{work.content}
-				<div class="ds-thread" data-thread-key="#{work.id}" data-title="#{work.title}" data-url="http://www.coolwubo.com/work/see?catId=#{work.id}"></div>
+						span#extendShow.fa.fa-expand.fa-3x(title="扩展显示")
+				.ds-share.flat(data-thread-key="#{work.id}",data-title="#{work.title}",data-images="http://www.coolwubo.com/img/logo.png",data-content="点击查看具体内容",data-url="http://www.coolwubo.com/work/#{work.id}")
+					.ds-share-aside-right
+						.ds-share-aside-inner
+						.ds-share-aside-toggle 分享到
+				<div class="ds-thread" data-thread-key="#{work.id}" data-title="#{work.title}" data-url="http://www.coolwubo.com/work/#{work.id}"></div>
+
 			.col-md-4
-				.aboutMe.boxed.blue-line.blue-line.artical-container
-					img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
-					.about-text 关注并喜欢前端技术
-					.about-text2 喜欢倒腾，对互联网充满热情
-					.about-decor
+				.smallAboutMe
+					a.small-about-avatar(href="/",title="about me") myImg
+					a.small-about-weibo(href="http://weibo.com/1825473213/profile",title="我的微博") myWeibo
 				.newArticle.panel.panel-default.boxed.artical-container
 					.panel-heading 最新文章
 					.panel-body
 						ul.side_article_list
-							each item in newPosts
-								li.side_article_list_item #{item.status}.
+							each item, index in newPosts
+								li.side_article_list_item 
 									a(href="/newPost/#{item._id}") #{item.title}
+									span.side_article_list_view #{item.pv}
+				.BlogAnchor.newArticle.panel.panel-default.boxed.artical-container
+					#AnchorContentToggle.panel-heading(title="收起",style="cursor:pointer;") 文章目录
+					.AnchorContent.panel-body.AnchorContent
 		script(src="/js/duoshuo.js")
+			
