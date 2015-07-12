@@ -190,9 +190,16 @@
   /**small about me start**/
   	.smallAboutMe{
   		height: 50px;
-		background-color: #22C3AA;
+		background-color: #FFF;
 		border-radius: 3px;
 		margin-top: 20px;
+		padding-top: 15px;
+  	}
+  	.smallWeibo{
+  		margin-left: 20px;
+  	}
+  	.smallWeibo a{
+  		color: #000;
   	}
   	.smallAboutMe a{
   		width: 40px;

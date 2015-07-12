@@ -1,5 +1,5 @@
 doctype html
-html
+html(xmlns:wb="http://open.weibo.com/wb") 
   head
     meta(charset='utf-8')
     meta(http-equiv="X-UA-Compatible",content="IE=edge")
@@ -17,6 +17,7 @@ html
         s.parentNode.insertBefore(hm, s);
       })();
     include ./includes/headcss
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
   body
     .body-wrap
       include ./includes/header
