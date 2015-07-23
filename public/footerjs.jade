@@ -53,12 +53,12 @@ script.
      $(".artical-content").find("h2,h3,h4,h5,h6").each(function(i,item){
           var tag = $(item).get(0).localName;
           $(item).attr("id","wow"+i);
-          $(".AnchorContent").append('<li><a class="anchor-link" href="#wow'+i+'">'+$(this).text()+'</a></li>');     
+          $(".AnchorContent").append('<li><a class="anchor-link new'+ tag +'" href="#wow'+i+'">'+$(this).text()+'</a></li>');
           $(".newh2").css("margin-left",0);     
-          $(".newh3").css("margin-left",20);     
-          $(".newh4").css("margin-left",40);     
-          $(".newh5").css("margin-left",60);     
-          $(".newh6").css("margin-left",80); });
+          $(".newh3").css("margin-left",10);     
+          $(".newh4").css("margin-left",20);     
+          $(".newh5").css("margin-left",30);     
+          $(".newh6").css("margin-left",40); });
 
   });
   window.onscroll = function(){
@@ -69,15 +69,3 @@ script.
         $(".BlogAnchor").removeClass('floatFixed');
       }
     }
-
-  $(window).scroll(function(){
-    var scrollTo = $(window).scrollTop(),
-        docHeight = $(document).height(),
-        windowHeight = $(window).height();
-
-    scrollPercent = (scrollTo / (docHeight-windowHeight)) * 100;
-    scrollPercent = scrollPercent.toFixed(1);
-
-    var scrollWidth = scrollPercent+"%";
-    $('#scrollProgress').css("width",scrollWidth);
-  }).trigger('scroll');

@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>使用原生JS实现焦点轮播图</title>
+	<style type="text/css">
+		*{margin: 0;padding-bottom: 0; text-decoration: none;}
+		body{ padding:20px;}
+
+		#container {width: 600px; height: 400px; border: 3px solid #333; overflow: hidden; position: relative;}
+
+		#list {width: 4200px; height: 400px; position: absolute; z-index: 1;}
+		#list img { float: left;}
+		#buttons { position: absolute; height: 10px;width: 100px; z-index: 2; left:250px; bottom: 20px;}
+		#buttons span { cursor:pointer; float: left;border: 1px solid #fff; width: 10px;height: 10px; border-radius: 50%;background-color: #333; margin-right: 5px;}
+		#buttons .on { background-color: orangered;}
+		.arrow {cursor:pointer; display: none; line-height: 39px; text-align: center;font-size: 36px; font-weight: bold; width: 40px; height: 40px; position: absolute; z-index: 2; top: 180px; background-color: RGBA(0,0,0,0.3); color: #fff;}
+		.arrow:hover{  background-color: RGBA(0,0,0,0.7);}
+		#container:hover .arrow {display: block;}
+		#prev {left: 20px;}
+		#next {right: 20px;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="list" style="left: -600px;">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/5.jpg" alt="5">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/1.jpg" alt="1">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/2.jpg" alt="2">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/3.jpg" alt="3">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/4.jpg" alt="4">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/5.jpg" alt="5">
+			<img src="http://7xjao4.com1.z0.glb.clouddn.com/1.jpg" alt="1">
+		</div>
+		<div id="buttons">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+			<span index="4"></span>
+			<span index="5"></span>
+		</div>
+		<a id="prev" class="arrow" href="javascritp:;">&lt;</a>
+		<a id="next" class="arrow" href="javascritp:;">&gt;</a>
+	</div>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			var container =document.getElementById('container');
+			var list = document.getElementById('list');
+			var buttons = document.getElementById('buttons').getElementsByTagName('span');
+			var prev = document.getElementById('prev');
+			var next = document.getElementById('next');
+			var index = 1;  //用来显示第几个小圆点
+			var flag = false;
+			var timer; //定时器			
+
+			function showDot(){
+				for(var i=0;i<buttons.length;i++){
+					if(buttons[i].className == 'on'){
+						buttons[i].className = '';
+						break;
+					}
+				}
+				buttons.className = '';
+				buttons[index-1].className = 'on';
+			}
+
+			// 为点击按钮绑定事件
+			function changeImg(offset){
+				if(offset == 0){
+					return;
+				}
+				var flag = true;
+				var newLeft = parseInt(list.style.left) + offset;
+
+				//设置动画参数
+				var time = 300;   //位移总的时间
+				var interval = 10;  //位移间隔时间
+				var step = offset / (time/interval);   //每次位移量，步长
+				
+
+				function go() {
+					if ((step < 0 && parseInt(list.style.left) > newLeft) || (step > 0 && parseInt(list.style.left) < newLeft)){  
+						list.style.left = parseInt(list.style.left) + step + 'px';
+						setTimeout(go, interval);
+					}
+					else{
+						flag = false;
+						list.style.left = newLeft + 'px';
+						if(newLeft > -600){
+							index = 5;
+							showDot();
+							list.style.left = -3000 + 'px';
+						}
+						if(newLeft < -3000){
+							index = 1;
+							showDot();
+							list.style.left = -600 + 'px';
+						}
+
+					}
+				}
+				go();
+			}
+
+			// 添加左右按钮的点击事件
+			next.onclick = function(){
+				if(flag){
+					return;
+				}
+				if(index == 5)
+					index =1;
+				else
+					index ++;
+				showDot();
+
+				changeImg(-600);
+			}
+
+			prev.onclick = function(){
+				if(flag){
+					return;
+				}
+				if(index == 1)
+					index =5;
+				else
+					index --;
+				showDot();
+				changeImg(600);
+			}
+
+			// 为每个小点添加事件
+			for(var i=0;i<buttons.length;i++){
+				buttons[i].onclick = function(){
+					if(flag){
+						return;
+					}
+
+					if(this.className == 'on'){
+						return;
+					}
+					var targetIndex = parseInt(this.getAttribute('index'));
+					var offset = (index - targetIndex) * 600;
+					
+					changeImg(offset);
+					index = targetIndex;
+					showDot();
+				}
+			}
+
+
+			//使用定时器控制页面自动切换
+			function play(){
+				timer = setInterval(function(){
+					next.onclick();
+				}, 3000);
+			}
+
+			function stop(){
+				clearInterval(timer);
+			}
+			// 鼠标移入的时候，停止自动切换，鼠标移除的时候再次启动
+			container.onmouseover = stop;
+			container.onmouseout = play;
+			play();
+		}
+	</script>
+</body>
+</html>

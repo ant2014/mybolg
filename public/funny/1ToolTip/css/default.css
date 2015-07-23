@@ -1,0 +1,75 @@
+body,html{font-size: 100%;padding: 0;margin: 0;}
+/*Reset*/
+*,
+*:after,
+*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,.clearfix:after{
+	content: " ";
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+
+body{
+	background-color: #e8e8e8;
+	color:#404d5d;
+	font-size: 1.05em;
+	font-weight: 500;
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+}
+
+p:first-child{
+	text-align: left;
+}
+
+a{
+	color: #2fa0ec;
+	text-decoration:none;
+	outline: none;
+}
+a:hover,a:focus{
+	color: #74777b;
+}
+
+p{
+	text-align: center;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 15px 0 ;
+}
+
+.body-container{
+	margin: 0 auto;
+}
+
+.bgcolor-zi{
+	background-color: #3d4444;
+}
+.headercss{
+	padding: 1em 190px 1em;
+	color: #fff;
+	text-align: center;
+}
+
+#container{
+	width: 50%;
+	height: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	margin: 50px auto 40px;
+	color: #333;
+	padding: 25px;
+	-webkit-box-shadow: 0 0 3px 0 rgba(50,50,50,0.8);
+	-moz-box-shadow: 0 0 3px 0 rgba(50,50,50,0.8);
+	box-shadow: 0 0 3px 0 rgba(50,50,50,0.8);
+}
+
+
+
+
