@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <title>页面加载进度条</title>
+<style>
+#mainProgress{
+    height: 2px;
+    width: 1%;
+    background: #d43f3a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px #d43f3a;
+}
+</style>
+</head>
+<body ontouchstart="">
+
+<div id="mainProgress"></div>
+
+<script>
+    (function () {
+        // 获取进度条 div
+        var $progress = document.getElementById('mainProgress');
+        // 初始进度，1%
+        var progress = 1;
+        // 生成随机数
+        var random = function(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        // 跑进度
+        var onprogress = function () {
+            // 随机时间
+            var timeout = random(10, 30);
+            setTimeout(function () {
+                // 如果页面加载完毕，则直接进度到 100%
+                if(window.loaded){
+                    $progress.style.width = '100%';
+                    setTimeout(function(){
+                        $progress.style.display = 'none';
+                    }, 1000);
+                    return;
+                }
+                // 随机进度
+                progress += random(1, 5);
+                // 随机进度不能超过 98%，以免页面还没加载完毕，进度已经 100% 了
+                if(progress > 98){
+                    progress = 98;
+                }
+                $progress.style.width = progress + '%';
+                onprogress();
+            }, timeout);
+        };
+        // 开始跑进度
+        onprogress();
+        window.onload = function(){
+            window.loaded = true;
+        };
+    })();
+</script>
+
+<iframe src="http://www.coolwubo.com/" frameborder="0"></iframe>
+
+<p>在前端，实现网页的进度条目前还没有一个比较精确的方案，都是一些模拟进度。即页面打开的时候是 1%，然后定时器增加进度到 99%，然后 window.onload 之后，进度跑到 100%。</p>
+
+</body>
+</html>

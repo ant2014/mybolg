@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <title>进度条</title>
+<style>
+*{ margin:0; padding: 0;}
+#scrollProgress{
+    border-radius: 0 1px 1px 0;
+    height: 2px;
+    left: 0;
+    top: 0;
+    position: fixed;
+    transition: width 500ms ease 0s;
+    width: 0;
+    z-index: 999;
+    background-color: #4b9cdb;
+    box-shadow: 0 0 10px #4b9cdb;
+}
+#showProgress {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+#bigBox {
+    height: 1800px;
+    background-color: #CCCCCC;
+}
+</style>
+</head>
+<body>
+
+    <div id="scrollProgress"></div>
+    <div id="showProgress"></div>
+    <div id="bigBox"></div>
+
+<script src='http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js'></script>
+<script type="text/javascript">  
+
+$(window).scroll(function(){
+    var scrollTo = $(window).scrollTop(),
+        docHeight = $(document).height(),
+        windowHeight = $(window).height();
+
+    scrollPercent = (scrollTo / (docHeight-windowHeight)) * 100;
+    scrollPercent = scrollPercent.toFixed(1);
+
+    $('#showProgress').text(scrollPercent+"%");
+    var scrollWidth = scrollPercent+"%";
+    $('#scrollProgress').css("width",scrollWidth);
+}).trigger('scroll');
+
+        
+</script>
+</body>
+</html>

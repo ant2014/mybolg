@@ -454,3 +454,13 @@ img {
     background-color: #4b9cdb;
     box-shadow: 0 0 10px #4b9cdb;
 }
+#mainProgress{
+    height: 2px;
+    width: 1%;
+    background: #E94C4C;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 5px 0 1px #E94C4C;
+    z-index: 1999;
+}
