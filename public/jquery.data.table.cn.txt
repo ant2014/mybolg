@@ -1,0 +1,16 @@
+{
+	"sSearch": "搜索",
+	"sLengthMenu": "_MENU_",   
+	"sZeroRecords": "没有检索到数据",   
+	"sInfo": "显示从_START_到_END_， 总 _TOTAL_ 条",   
+	"sInfoEmpty": "",   
+	"sProcessing": "正在加载数据...", 
+	"sInfoFiltered": "", 
+	"oPaginate": {   
+	    "sFirst": "首页",   
+	    "sPrevious": "上页",   
+	    "sNext": "下页",   
+	    "sLast": "尾页"  
+	}
+}
+

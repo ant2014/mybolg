@@ -1,7 +1,9 @@
-script(src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js")
+script(src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js")
 script(src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js")
 script(src="/js/prettify.js")
 script(src="/js/lightHeight.js")
+script(src="/js/bootstrap-datetimepicker.js")
+script(src="/js/bootstrap-datetimepicker.zh-CN.js")
 script.
   (function () {
         // 获取进度条 div
@@ -119,3 +121,10 @@ script.
     var scrollWidth = scrollPercent+"%";
     $('#scrollProgress').css("width",scrollWidth);
   }).trigger('scroll');
+
+  $(".form_date").datetimepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayBtn: true,
+    pickerPosition: "bottom-left"
+  });  

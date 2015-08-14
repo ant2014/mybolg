@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+html
+  head
+    meta(charset="UTF-8")
+    title 论坛招聘信息汇总
+  body
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="icon" href="http://www.coolwubo.com/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.dataTables.js"></script>
+    <script src="/js/jquery.dataTables.bootstrap.js"></script>
+    style.
+      body{margin:20px;}
+      .starter-template h1,p{text-align: center;}
+      .textCenter{text-align: center;}
+    div.starter-template(style="margin:0 auto;padding: 10px;background-color: #8AA84C;color: #fff;")
+      h1 找工作信息汇总
+      p.lead 搜索提示，使用"百度"、"内推"、"Java"等关键字搜索相应数据
+
+    //- div.table-responsive
+    //-   table.table.table-bordered.table-striped
+    //-     thead
+    //-       tr
+    //-         <th class="col-xs-1 textCenter" style="width:5%">序号</th>
+    //-         <th class="col-xs-1 textCenter" style="width:10%">公司</th>
+    //-         <th class="col-xs-1 textCenter" style="width:10%">类别</th>
+    //-         <th class="col-xs-2 textCenter" style="width:10%">开始时间</th>
+    //-         <th class="col-xs-2 textCenter" style="width:10%">结束时间</th>
+    //-         <th class="col-xs-2 textCenter" style="width:10%">链接</th>
+    //-         <th class="col-xs-2 textCenter" style="width:35%">详情</th>
+    //-         <th class="col-xs-2 textCenter" style="width:10%">更新时间</th>
+    //-     tbody
+    //-       each item,i in zhaoPins
+    //-         tr(class="item-id-#{item._id}")
+    //-           td #{i+1}
+    //-           td #{item.company}
+    //-           td #{item.category}
+    //-           td #{item.startTime}
+    //-           td #{item.endTime}
+    //-           td 
+    //-             a(href="#{item.guanwang}" target="_blank") 查看链接
+    //-           td #{item.beizhu}
+    //-           td #{moment(item.meta.updateAt).format('YYYY-MM-DD HH:mm:ss')}
+    div#table_toolBar_template.toolBar(style="display: none")
+      .btn-group
+        <button class="btn" title="刷新" onclick="refresh()"><i class="icon-refresh"></i> 刷新</button>
+    table#zhaopinDataTable.bordered-table.zebra-striped(cellpadding="0" cellspacing="0" border="0" style="width: 100%")
+      thead
+        tr
+          <th class="col-xs-1 textCenter" style="width:5%">序号</th>
+          <th class="col-xs-1 textCenter" style="width:5%">序号</th>
+          <th class="col-xs-1 textCenter" style="width:10%">公司/部门</th>
+          <th class="col-xs-1 textCenter" style="width:10%">类别</th>
+          <th class="col-xs-1 textCenter" style="width:10%">岗位</th>
+          <th class="col-xs-2 textCenter" style="width:10%">发布时间</th>
+          <th class="col-xs-2 textCenter" style="width:10%">链接</th>
+          <th class="col-xs-2 textCenter" style="width:35%">备注</th>
+          <th class="col-xs-2 textCenter" style="width:10%">更新时间</th>
+      tbody
+        tr
+          <td colspan="7" class="dataTables_empty">正在从服务器加载数据</td>
+      tfoot
+    div.starter-template(style="margin:0 auto;padding: 10px;background-color: #3091B0;color: #fff;")
+      h1 北邮人论坛找工作版块爬取的最新数据
+      p.lead 搜索提示，使用"8-12"搜索8月12日数据，使用"Jobs"搜索"毕业生找工作",使用"Parttiem"搜索"兼职实习"
+    table#byrDataTable.bordered-table.zebra-striped(cellpadding="0" cellspacing="0" border="0" style="width: 100%")
+      thead
+        tr
+          <th class="col-xs-1 textCenter" style="width:5%">序号</th>
+          <th class="col-xs-1 textCenter" style="width:5%">序号</th>
+          <th class="col-xs-1 textCenter" style="width:10%">日期</th>
+          <th class="col-xs-1 textCenter" style="width:10%">版块</th>
+          <th class="col-xs-1 textCenter" style="width:40%">标题</th>
+          <th class="col-xs-2 textCenter" style="width:10%">链接</th>
+          //<th class="col-xs-2 textCenter" style="width:10%">更新时间</th>
+      tbody
+        tr
+          <td colspan="7" class="dataTables_empty">正在从服务器加载数据</td>
+      tfoot
+    div.starter-template(style="margin:0 auto;")
+      h1 经验总结
+    <a href="http://bbs.byr.cn/#!article/Job/1719670" target="_blank">1、找工作时间表2014-2015</a><br/>
+    <a href="http://bbs.byr.cn/#!article/Job/1720619" target="_blank">2、腾讯、百度、网易游戏、华为Offer及笔经面经（转</a><br/>
+    <a href="http://bbs.byr.cn/#!article/Job/1714396" target="_blank">3、信通土著2015银行类求职总结</a><br/>
+    <a href="http://bbs.byr.cn/#!article/Job/1695022" target="_blank">4、转：告诉你一个真实的中国移动研究院</a><br/>
+    <a href="http://bbs.byr.cn/#!article/Job/1726405" target="_blank">5、人人，金山西山居，腾讯互娱，微信，网易游戏offer及面经</a><br/>
+    <a href="http://bbs.byr.cn/#!article/Job/1727290" target="_blank">6、收简历有感，给大家点投递简历的建议</a><br/>
+
+    script.
+      var orderNumber;
+      var orderNumber2;
+      $(function(){
+        initDataTables();
+        initByrDataTables();
+      })
+      function initDataTables(){
+        oTable=$('#zhaopinDataTable').dataTable( {
+          "sDom": '<"top"<"toolbar">f<"clear">>rt<"bottom"lpi<"clear">>',
+          "bPaginate": true,
+          "bProcessing": true,
+          "bServerSide": false,
+          "bAutoWidth": false,
+          "bRetrieve": true,
+          "bDestroy": true,
+          "sAjaxSource": "/zhaopin/getData",//URL
+          "fnServerData": retrieveData,
+          "aLengthMenu":[10, 25, 50],
+          "aoColumnDefs": [ 
+            { "bVisible": false, "aTargets": [0] }//设置不显示的列 第0列
+          ],
+          "aaSorting": [[ 0, "desc" ]],//指定排序的列 默认是第0列 升序
+          "aoColumns": [
+            { "mDataProp": "meta.updateAt"},
+            { "mDataProp": "meta.createAt",
+              "fnRender" : function(oObj) {
+                return orderNumber ++;     
+              }
+            },
+            {"mDataProp": "company"},
+            {"mDataProp": "category"},
+            {"mDataProp": "gangwei"},
+            {"mDataProp": "startTime"},
+            {"mDataProp": "guanwang",
+              "fnRender" : function(oObj) {
+                return "<a href= " + oObj.aData.guanwang + " target=\"_blank\">点击详情</a>";     
+              }
+            },
+            {"mDataProp": "beizhu"},
+            {"mDataProp": "meta.updateAt",
+              "fnRender" : function(oObj) {
+                return oObj.aData.meta.updateAt.substr(0,16);     
+              }
+            }
+          ],
+          "sPaginationType": "full_numbers",      //翻页界面类型   
+          "oLanguage": {              //汉化 也可以写到oLanguage里面
+            "sUrl": "jquery.data.table.cn.txt"
+          },
+          "error": function (xhr, error, thrown) {//暂时还没用到
+              if ( error == "parsererror" ) {  
+                  oSettings.oApi._fnLog( oSettings, 0, "DataTables warning: JSON data from " + "server could not be parsed. This is caused by a JSON formatting error." );  
+              } 
+          },
+          "fnDrawCallback": function () {
+            //行选中绑定
+             $("#zhaopinDataTable tbody tr").click( function( e ) {
+                  if ( $(this).hasClass('row_selected') ) {
+                      $(this).removeClass('row_selected');
+                  }
+                  else {
+                      oTable.$('tr.row_selected').removeClass('row_selected');
+                      $(this).addClass('row_selected');
+                  }
+              });
+                $("div.toolbar").html($("#table_toolBar_template").html());
+            }
+        } );
+      }
+      function retrieveData( sSource, aoData, fnCallback ) {   
+        orderNumber=1;
+        //将其他参数加入参数数组   
+        aoData.push();  
+        
+        $.ajax( {   
+            "type": "POST",    
+            "url": sSource,//sAjaxSource
+            "dataType": "json",   
+            "data": aoData, //参数传递   
+            "success": function(resp) { 
+                fnCallback($.parseJSON(resp.jsonResult)); //必须转换成json对象 datatables才能识别
+            }   
+        });   
+      }
+      /* 刷新操作*/
+      function refresh(){
+        oTable.fnDraw();
+      }
+
+      function initByrDataTables(){
+        oTable=$('#byrDataTable').dataTable( {
+          "sDom": '<"top"<"toolbar">f<"clear">>rt<"bottom"lpi<"clear">>',
+          "bPaginate": true,
+          "bProcessing": true,
+          "bServerSide": false,
+          "bAutoWidth": false,
+          "bRetrieve": true,
+          "bDestroy": true,
+          "sAjaxSource": "/zhaopin/byr",//URL
+          "fnServerData": retrieveData2,
+          "aLengthMenu":[10, 25, 50],
+          "aoColumnDefs": [ 
+            { "bVisible": false, "aTargets": [0] }//设置不显示的列 第0列
+          ],
+          "aaSorting": [[ 0, "desc" ]],//指定排序的列 默认是第0列 升序
+          "aoColumns": [
+            { "mDataProp": "meta.updateAt"},
+            { "mDataProp": "meta.createAt",
+              "fnRender" : function(oObj) {
+                return orderNumber2 ++;     
+              }
+            },
+            {"mDataProp": "date"},
+            {"mDataProp": "bankuai",
+              "fnRender" : function(oObj) {
+                if(oObj.aData.bankuai=='Jobs'){
+                  return "毕业生找工作";
+                }else{
+                  return "兼职实习";
+                }     
+              }
+            },
+            {"mDataProp": "title"},
+            {"mDataProp": "href",
+              "fnRender" : function(oObj) {
+                return "<a href= http://bbs.byr.cn" + oObj.aData.href + " target=\"_blank\">点击详情</a>";     
+              }
+            }
+          ],
+          "sPaginationType": "full_numbers",      //翻页界面类型   
+          "oLanguage": {              //汉化 也可以写到oLanguage里面
+            "sUrl": "jquery.data.table.cn.txt"
+          },
+          "error": function (xhr, error, thrown) {//暂时还没用到
+              if ( error == "parsererror" ) {  
+                  oSettings.oApi._fnLog( oSettings, 0, "DataTables warning: JSON data from " + "server could not be parsed. This is caused by a JSON formatting error." );  
+              } 
+          },
+          "fnDrawCallback": function () {
+            //行选中绑定
+             $("#byrDataTable tbody tr").click( function( e ) {
+                  if ( $(this).hasClass('row_selected') ) {
+                      $(this).removeClass('row_selected');
+                  }
+                  else {
+                      oTable.$('tr.row_selected').removeClass('row_selected');
+                      $(this).addClass('row_selected');
+                  }
+              });
+                $("div.toolbar").html($("#table_toolBar_template").html());
+            }
+        } );
+      }
+
+      function retrieveData2( sSource, aoData, fnCallback ) {   
+        orderNumber2=1;
+        //将其他参数加入参数数组   
+        aoData.push();  
+        
+        $.ajax( {   
+            "type": "POST",    
+            "url": sSource,//sAjaxSource
+            "dataType": "json",   
+            "data": aoData, //参数传递   
+            "success": function(resp) { 
+                fnCallback($.parseJSON(resp.jsonResult)); //必须转换成json对象 datatables才能识别
+            }   
+        });   
+      }

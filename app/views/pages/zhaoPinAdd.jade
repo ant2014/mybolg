@@ -1,0 +1,78 @@
+extends ../layoutGl.jade
+
+block content
+  #mainProgress
+  #content.container
+    .row
+      .col-md-12
+        h1(style="margin-top:60px") 添加招聘信息
+        form.form-horizontal(method="post",action="/gl/zhaopin/save")
+          input(type="hidden",name="zhaoPin[_id]",value=zhaoPin._id)
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 公司名称
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="zhaoPin[company]",value="#{zhaoPin.company}")
+          //- .form-group
+          //-   label.col-sm-2.control-label(for="inputzhaoPinCates") 文章类别
+          //-   .col-sm-10
+              //- input#zhaoPinCates.form-control(type="text",name="zhaoPin[zhaoPinCates]",value="#{zhaoPin.zhaoPinCates}")
+          .form-group      
+            label.col-sm-2.control-label 招聘类别
+            .col-sm-10
+                label.radio-inline
+                  - if (zhaoPin.category == "实习")
+                    input(type="radio",name="zhaoPin[category]",value="实习" checked) 
+                    | 实习
+                  - else
+                    input(type="radio",name="zhaoPin[category]",value="实习") 
+                    | 实习
+                label.radio-inline  
+                  - if (zhaoPin.category == "校招内推")
+                    input(type="radio",name="zhaoPin[category]",value="校招内推" checked) 
+                    | 校招内推  
+                  - else
+                    input(type="radio",name="zhaoPin[category]",value="校招内推") 
+                    | 校招内推  
+                label.radio-inline
+                  - if (zhaoPin.category == "校招正式")
+                    input(type="radio",name="zhaoPin[category]",value="校招正式" checked) 
+                    | 校招正式  
+                  - else
+                    input(type="radio",name="zhaoPin[category]",value="校招正式") 
+                    | 校招正式  
+          .form-group
+            label.col-sm-2.control-label(for="inputTitle") 岗位
+            .col-sm-10
+              input#inputTitle.form-control(type="text",name="zhaoPin[gangwei]",value="#{zhaoPin.gangwei}")
+          .form-group
+            label.col-sm-2.control-label(for="inputOrigin") 开始时间
+            .col-sm-10
+              .input-append.date.form_date
+                input(size="46",type="text",name="zhaoPin[startTime]",value="#{zhaoPin.startTime}" readonly)
+                span.add-on
+                  i.icon-th
+          .form-group
+            label.col-sm-2.control-label(for="inputAuthor") 结束时间
+            .col-sm-10
+              .input-append.date.form_date
+                input(size="46",type="text",name="zhaoPin[endTime]",value="#{zhaoPin.endTime}" readonly)
+                span.add-on
+                  i.icon-th
+          .form-group
+            label.col-sm-2.control-label(for="inputAuthor") 官网链接
+            .col-sm-10
+              input#inputAuthor.form-control(type="text",name="zhaoPin[guanwang]",value="#{zhaoPin.guanwang}")
+          .form-group
+            label.col-sm-2.control-label(for="inputAuthor") 详情
+            .col-sm-10
+              input#inputAuthor.form-control(type="text",name="zhaoPin[xiangqing]",value="#{zhaoPin.xiangqing}")
+          .form-group
+            label.col-sm-2.control-label(for="inputContent") 备注
+            .col-sm-10
+              textarea#inputContent.form-control(name="zhaoPin[beizhu]",value="#{zhaoPin.beizhu}",rows="10") #{zhaoPin.beizhu}
+
+          .form-group
+            .col-sm-offset-11.col-sm-2.pull-right
+              button.btn.btn-primary(type = "submit") 提交
+
+        

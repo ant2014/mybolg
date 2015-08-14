@@ -1,0 +1,39 @@
+extends ../layoutGl.jade
+
+block content
+  #mainProgress
+  #content.container
+    .row
+      h1 工作文章列表
+      h3
+        a.btn.btn-success(target-"_blank",href="/gl/zhaopin/add") 添加文章
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th 序号
+            th 公司
+            th 类别
+            th 开始时间
+            th 结束时间
+            th 官网
+            th 备注
+            th 更新时间
+            th 修改
+            th 删除
+         tbody
+           each item in zhaoPins
+             tr(class="item-id-#{item._id}")
+               td 1
+               td #{item.company}
+               td #{item.category}
+               td #{item.startTime}
+               td #{item.endTime}
+               td #{item.guanwang}
+               //- td #{item.xiangqing}
+               td #{item.beizhu}
+               td #{moment(item.meta.updateAt).format('YYYY-MM-DD HH:mm:ss')}
+               td: a.btn.btn-primary(target-"_blank",href="/gl/zhaopin/update/#{item._id}") 修改
+               td: button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+
+      script(src="/js/zhaopin.js")
+

@@ -4,6 +4,8 @@ var LifeCate = require('../app/controllers/lifeCate')
 var Work = require('../app/controllers/work')
 var Life = require('../app/controllers/life')
 var User = require('../app/controllers/user')
+var Zhaopin = require('../app/controllers/zhaopin')
+var Crawler = require('../app/controllers/crawler')
 
 module.exports = function(app){
 	
@@ -53,6 +55,20 @@ module.exports = function(app){
 	app.get('/gl/logout',User.logout);
 	app.get('/signin',User.showSignin);
 	/*app.get('/signup',User.showSignup);*/
+
+
+	//zhaopin  gl
+	app.get('/zhaopin',Zhaopin.outList)
+	app.post('/zhaopin/getData',Zhaopin.outListGetData)
+
+	app.get('/gl/zhaopin',User.signinRequired,Zhaopin.list)
+	app.get('/gl/zhaopin/add',User.signinRequired,Zhaopin.add)
+	app.post('/gl/zhaopin/save',User.signinRequired,Zhaopin.save)
+	app.get('/gl/zhaopin/update/:id',User.signinRequired,Zhaopin.update)
+	app.delete('/gl/zhaopin/delete/:id',User.signinRequired,Zhaopin.delete)
+
+	//crawler
+	app.post('/zhaopin/byr',Crawler.list)
 
 	app.get('/search',Index.search)
 	
