@@ -17,31 +17,31 @@
 进入mongodb/bin目录下执行./mongo打开数据库，执行use [数据库名]查看数据库，也可以使用mongoVUE等可视化工具来查看数据
 
 ###4、相关技术性问题
-  express--一个简洁而灵活的 node.js Web应用框架
-    Express （ http://expressjs.com/ ） 除了为 http 模块提供了更高层的接口外，还实现了
-　　　　许多功能，其中包括：
-　　　　 路由控制；
-　　　　 模板解析支持；
-　　　　 动态视图；
-　　　　 用户会话；
-　　　　 CSRF 保护；
-　　　　 静态文件服务；
-　　　　 错误控制器；
-　　　　 访问日志；
-　　　　 缓存；
-　　　　 插件支持。
+####4.1 express--一个简洁而灵活的 node.js Web应用框架    
+  Express （ http://expressjs.com/ ） 除了为 http 模块提供了更高层的接口外，还实现了许多功能，其中包括：  
+　　　　 路由控制；  
+　　　　 模板解析支持；  
+　　　　 动态视图；  
+　　　　 用户会话；  
+　　　　 CSRF 保护；  
+　　　　 静态文件服务；  
+　　　　 错误控制器；  
+　　　　 访问日志；  
+　　　　 缓存；  
+　　　　 插件支持。  
 
 　　 Express 提供了路由控制权转移的方法，即回调函数的第三个参数next，通过调用next()，会将路由控制权转移给后面的规则。
 
-　mongodb--适合node的关系型数据库
-　  mongodb --- http://docs.mongodb.org/manual/ 手册
+####4.2 mongodb--适合node的关系型数据库
+[mongodb手册](http://docs.mongodb.org/manual/)
 
-　　MongoDB介绍及安装 --  http://www.cnblogs.com/lipan/archive/2011/03/08/1966463.html
+[MongoDB介绍及安装](http://www.cnblogs.com/lipan/archive/2011/03/08/1966463.html)
 
-　　什么是MongoDB ? ---  http://www.w3cschool.cc/mongodb/mongodb-intro.html
+####4.3 Mongoose 
+Mongoose是MongoDB的一个对象模型工具，既类似ORM，让NodeJS更容易操作Mongodb数据库
+[Mongoose文档](http://mongoosejs.com/)
 
-　Mongoose -- Mongoose是MongoDB的一个对象模型工具，既类似ORM，让NodeJS更容易操作Mongodb数据库，Mongoose文档
-
-　node模版引擎--ejs，jade  
+####4.4 node模版引擎--ejs，jade  
 　　 
-  这里注意：其实配置package.json非常重要，我们写好所需的依赖模块，然后通过 npm install 就可以将参数里面的依赖一起进行安装
+####4.5 package.json
+这里注意：其实配置package.json非常重要，我们写好所需的依赖模块，然后通过 npm install 就可以将参数里面的依赖一起进行安装
