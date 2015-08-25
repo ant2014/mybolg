@@ -3,39 +3,139 @@ extends ../layout.jade
 
 block content
 	#content.container.bs-docs-container
-		img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
-		h2.centerText 代码分享
 		.row
+			.col-md-8(role="main")
+				.artical-container.boxed
+					ul.artical-list
+						li
+							a(href="#") 
+								span.articalCat 01
+							a.articalTitle(href="http://www.coolwubo.com") 学前班(duan)  
+							span.articalShort 一个基于Node.js构建的轻型个人网站
+							a.tipImg.pull-right(href="http://www.coolwubo.com" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/mybolg" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 02
+							a.articalTitle(href="http://www.coolwubo.com/funny/2tableUI/index.html") table插件
+							span.articalShort jQuery简单表格插件
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/2tableUI/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+
+						li
+							a(href="#") 
+								span.articalCat 03
+							a.articalTitle(href="http://www.coolwubo.com/funny/2JSlunbo/index.html") JS轮播图
+							span.articalShort 原生JS实现焦点轮播图
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/2JSlunbo/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 04
+							a.articalTitle(href="http://www.coolwubo.com/funny/1ToolTip/index.html") ToolTip
+							span.articalShort 鼠标悬停提示
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/1ToolTip/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 05
+							a.articalTitle(href="http://www.coolwubo.com/funny/3ScrollWidth/index.html") ScrollPrecent
+							span.articalShort 页面顶部显示滚轮的百分比
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/3ScrollWidth/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 06
+							a.articalTitle(href="http://www.coolwubo.com/funny/4LoadingWidth/index.html") LoadingPrecent
+							span.articalShort 页面顶部显示页面加载百分比
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/4LoadingWidth/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 07
+							a.articalTitle(href="http://www.coolwubo.com/funny/5requirejs/index.html") RequireJs
+							span.articalShort requireJs的小案例
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/5requirejs/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+						li
+							a(href="#") 
+								span.articalCat 08
+							a.articalTitle(href="http://www.coolwubo.com/funny/6cssLunbo/index.html") cssLunbo
+							span.articalShort CSS实习的多图切换
+							a.tipImg.pull-right(href="http://www.coolwubo.com/funny/6cssLunbo/index.html" target="_blank")
+								i(class="fa fa-picture-o fa-2x maleft10 maright10")
+							a.tipImg.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+								i(class="fa fa-github fa-2x maleft10")
+
 			.col-md-4
-				.funnydiv.boxed
-					.f-img-niuyue
-						a(href="http://www.coolwubo.com") 学前班(duan)
-					.f-text
-						p 学前班(duan)是一个基于Node.js使用express4.0框架和Mongodb数据库构建的轻型个人博客，前端使用Bootstrap和Jade模板实现简介精炼的界面效果。
-					.f-link
-						a.pull-right(href="http://www.coolwubo.com" target="_blank")
-							i(class="fa fa-picture-o fa-2x maleft10 maright10")
-						a.pull-right(href="https://github.com/ant2014/mybolg" target="_blank")
-							i(class="fa fa-github fa-2x maleft10")
-			.col-md-4
-				.funnydiv.boxed
-					.f-img-ToolTip
-						a(href="http://www.coolwubo.com/funny/1ToolTip/index.html" target="_blank") ToolTip
-					.f-text
-						p Tooltips也被称为屏幕提示，它是当鼠标悬停在一个图标、图片、超链接或其它元素上面的时候出现的一串提示信息。这是一个纯CSS实现的小例子。
-					.f-link
-						a.pull-right(href="http://www.coolwubo.com/funny/1ToolTip/index.html" target="_blank")
-							i(class="fa fa-picture-o fa-2x maleft10 maright10")
-						a.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
-							i(class="fa fa-github fa-2x maleft10")
-			.col-md-4
-				.funnydiv.boxed
-					.f-img-Lunbo
-						a(href="http://www.coolwubo.com/funny/2JSlunbo/index.html" target="_blank") JS原生轮播效果
-					.f-text
-						p 这是一个使用原生JS实现焦点轮播图的简单例子，具有箭头切换、图片按钮切换、无限滚动、自动播放等功能。
-					.f-link
-						a.pull-right(href="http://www.coolwubo.com/funny/2JSlunbo/index.html" target="_blank")
-							i(class="fa fa-picture-o fa-2x maleft10 maright10")
-						a.pull-right(href="https://github.com/ant2014/funnyTools/blob/master/3-js-lunbo" target="_blank")
-							i(class="fa fa-github fa-2x maleft10")
+				//- .aboutMe.boxed.blue-line.blue-line.artical-container
+				//- 	img.about-avatar(src="/img/avatar.jpg",alt="my avatar")
+				//- 	.about-text 关注并喜欢前端技术
+				//- 	.about-text2 喜欢倒腾，对互联网充满热情
+				//- 	.about-decor
+				.newArticle.panel.panel-default.boxed.artical-container
+					.panel-heading   常用工具
+					.panel-body
+						ul.side_article_list
+
+							li.side_article_list_item 
+								a(href="http://www.bejson.com/" target="_blank") JSON格式校验
+							li.side_article_list_item 
+								a(href="http://mahua.jser.me/" target="_blank") MarkDown在线编辑
+							li.side_article_list_item 
+								a(href="http://tool.chinaz.com/qrcode/" target="_blank") 生成二维码
+							li.side_article_list_item 
+								a(href="http://tool.chinaz.com/Tools/JsFormat.aspx" target="_blank") JS/HTML格式化/压缩
+							li.side_article_list_item 
+								a(href="http://tool.chinaz.com/regex" target="_blank") 正则在线测试
+							li.side_article_list_item 
+								a(href="http://www.bejson.com/httppost/" target="_blank") HTTP请求模拟
+							li.side_article_list_item 
+								a(href="http://www.bejson.com/ui/image2base64/" target="_blank") 图片转Base64
+			//- .col-md-4
+			//- 	.funnydiv.boxed
+			//- 		.f-img-niuyue
+			//- 			a(href="http://www.coolwubo.com") 学前班(duan)
+			//- 		.f-text
+			//- 			p 学前班(duan)是一个基于Node.js使用express4.0框架和Mongodb数据库构建的轻型个人博客，前端使用Bootstrap和Jade模板实现简介精炼的界面效果。
+			//- 		.f-link
+			//- 			a.pull-right(href="http://www.coolwubo.com" target="_blank")
+			//- 				i(class="fa fa-picture-o fa-2x maleft10 maright10")
+			//- 			a.pull-right(href="https://github.com/ant2014/mybolg" target="_blank")
+			//- 				i(class="fa fa-github fa-2x maleft10")
+			//- .col-md-4
+			//- 	.funnydiv.boxed
+			//- 		.f-img-ToolTip
+			//- 			a(href="http://www.coolwubo.com/funny/1ToolTip/index.html" target="_blank") ToolTip
+			//- 		.f-text
+			//- 			p Tooltips也被称为屏幕提示，它是当鼠标悬停在一个图标、图片、超链接或其它元素上面的时候出现的一串提示信息。这是一个纯CSS实现的小例子。
+			//- 		.f-link
+			//- 			a.pull-right(href="http://www.coolwubo.com/funny/1ToolTip/index.html" target="_blank")
+			//- 				i(class="fa fa-picture-o fa-2x maleft10 maright10")
+			//- 			a.pull-right(href="https://github.com/ant2014/funnyTools" target="_blank")
+			//- 				i(class="fa fa-github fa-2x maleft10")
+			//- .col-md-4
+			//- 	.funnydiv.boxed
+			//- 		.f-img-Lunbo
+			//- 			a(href="http://www.coolwubo.com/funny/2JSlunbo/index.html" target="_blank") JS原生轮播效果
+			//- 		.f-text
+			//- 			p 这是一个使用原生JS实现焦点轮播图的简单例子，具有箭头切换、图片按钮切换、无限滚动、自动播放等功能。
+			//- 		.f-link
+			//- 			a.pull-right(href="http://www.coolwubo.com/funny/2JSlunbo/index.html" target="_blank")
+			//- 				i(class="fa fa-picture-o fa-2x maleft10 maright10")
+			//- 			a.pull-right(href="https://github.com/ant2014/funnyTools/blob/master/3-js-lunbo" target="_blank")
+			//- 				i(class="fa fa-github fa-2x maleft10")

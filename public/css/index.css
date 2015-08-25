@@ -411,7 +411,13 @@ img {
     background-color: #690;
     text-align: center;
 }
-
+.articalShort{
+    color: #ccc;
+    margin-left: 10px;
+}
+.tipImg:hover{
+    color: #22c3aa;
+}
 .f-img-niuyue a,
 .f-img-ToolTip a,
 .f-img-Lunbo a {
